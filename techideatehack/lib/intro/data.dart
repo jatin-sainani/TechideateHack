@@ -11,7 +11,7 @@ class IntroItem {
 }
 
 final sampleItems = <IntroItem>[
-  new IntroItem(title: 'Writing things together is what we do best!', category: 'COLLABORATION', imageUrl: 'assets/1.png',),
-  new IntroItem(title: 'Occasionally wearing pants is a good idea.', category: 'CULTURE', imageUrl: 'assets/2.png',),
-  new IntroItem(title: 'We might have the best team spirit ever.', category: 'SPIRIT', imageUrl: 'assets/3.png',),
+  new IntroItem(title: 'Ending your Dilemma!', category: 'FOCUS', imageUrl: 'images/intro1.png',),
+  new IntroItem(title: 'Preplanning is always good', category: 'LEARN', imageUrl: 'images/intro2.png',),
+  new IntroItem(title: 'We might have the best team spirit ever.', category: 'SPIRIT', imageUrl: 'images/intro3.jpg',),
 ];
