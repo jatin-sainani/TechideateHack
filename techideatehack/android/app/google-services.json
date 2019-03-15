@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "661260019052",
+    "firebase_url": "https://techideatehack.firebaseio.com",
+    "project_id": "techideatehack",
+    "storage_bucket": "techideatehack.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661260019052:android:2a67f88802c940ba",
+        "android_client_info": {
+          "package_name": "com.example.techideatehack"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661260019052-os3ua6mju12la4m71bc799956dfm61j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.techideatehack",
+            "certificate_hash": "9147f98b440780ff1b45f3acf1767a88bb1a7c4d"
+          }
+        },
+        {
+          "client_id": "661260019052-n5epc8u502hqqjid0b3bl7h87j2bf9ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGj8F6H9uoBv1gbDgP4SpkR1Qh29Fah7c"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661260019052-n5epc8u502hqqjid0b3bl7h87j2bf9ep.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
