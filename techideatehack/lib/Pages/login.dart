@@ -71,16 +71,8 @@ class _loginstate extends State<login> with TickerProviderStateMixin {
                     color: Colors.white,
                   ),
                   child: new Container(
-                    decoration: new BoxDecoration(
-                        gradient: new LinearGradient(
-                          colors: <Color>[
-                            const Color.fromRGBO(162, 146, 199, 0.8),
-                            const Color.fromRGBO(51, 51, 63, 0.9),
-                          ],
-                          stops: [0.2, 1.0],
-                          begin: const FractionalOffset(0.0, 0.0),
-                          end: const FractionalOffset(0.0, 1.0),
-                        )),
+                      decoration: new BoxDecoration(
+                         color: Colors.black),
                     child: new ListView(
                         padding: const EdgeInsets.all(0.0),
                         children: <Widget>[
@@ -92,49 +84,79 @@ class _loginstate extends State<login> with TickerProviderStateMixin {
                                 mainAxisAlignment: MainAxisAlignment
                                     .spaceEvenly,
                                 children: <Widget>[
-                                  new Container(
-                                      width: 250.0,
-                                      height: 250.0,
-                                      alignment: Alignment.center,
-                                      decoration: new BoxDecoration(
-                                        image: DecorationImage(
-                                          image: AssetImage('images/tick.png'),
-                                        ),
-                                      )),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 200.0 ),
+                                    child: new Container(
+                                        width: 250.0,
+                                        height: 200.0,
+                                        alignment: Alignment.center,
+                                        decoration: new BoxDecoration(
+                                          border: new Border(
+                                              top: new BorderSide(
+                                                  color: new Color.fromARGB(255, 30, 255, 30),
+                                                  width: 4.0)),
+
+                                          borderRadius: BorderRadius.all(Radius.circular(50.0)),
+
+                                          image: DecorationImage(
+                                            image: AssetImage('images/logo4.png'),
+                                            fit:BoxFit.fitHeight,
+
+
+
+
+
+                                          ),
+
+                                        )),
+                                  ),
 
                                   //Tick
-                                  new Container(
-                                    margin: new EdgeInsets.symmetric(
-                                        horizontal: 20.0),
-                                    child: new Column(
-                                      mainAxisAlignment: MainAxisAlignment
-                                          .spaceEvenly,
-                                      children: <Widget>[
-                                        new Form(
-                                            child: new Column(
-                                              mainAxisAlignment: MainAxisAlignment
-                                                  .spaceAround,
-                                              children: <Widget>[
-                                                new TextFormField(
-                                                  decoration: InputDecoration(
-                                                    hintText: "Username",
-                                                    icon: Icon(Icons.person),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top:100.0),
+                                    child: new Container(
+                                      margin: new EdgeInsets.symmetric(
+                                          horizontal: 20.0),
+                                      child: new Column(
+                                        mainAxisAlignment: MainAxisAlignment
+                                            .spaceEvenly,
+                                        children: <Widget>[
+                                          new Form(
+                                              child: new Column(
+                                                mainAxisAlignment: MainAxisAlignment
+                                                    .spaceAround,
+                                                children: <Widget>[
+                                                  new TextFormField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "Username",
+                                                      hintStyle: TextStyle(
+                                                        color: Colors.white
+                                                      ),
+                                                      icon: Icon(Icons.person, color: Colors.white,),
 
+                                                    ),
+                                                    obscureText: false,
                                                   ),
-                                                  obscureText: false,
-                                                ),
-
-                                                new TextFormField(
-                                                  decoration: InputDecoration(
-                                                    hintText: "Password",
-                                                    icon: Icon(Icons.lock),
-
+                                                  new SizedBox(
+                                                    height: 20.0,
                                                   ),
-                                                  obscureText: true,
-                                                )
-                                              ],
-                                            )),
-                                      ],
+                                                  new TextFormField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "Password",
+                                                      hintStyle: TextStyle(
+                                                          color: Colors.white
+                                                      ),
+                                                      icon: Icon(Icons.lock, color: Colors.white,),
+
+
+
+                                                    ),
+                                                    obscureText: true,
+                                                  )
+                                                ],
+                                              )),
+                                        ],
+                                      ),
                                     ),
                                   ), //form
 
@@ -143,7 +165,8 @@ class _loginstate extends State<login> with TickerProviderStateMixin {
                                     padding: const EdgeInsets.only(
                                       top: 160.0,
                                     ),
-                                    onPressed: null,
+                                    onPressed: ()=> debugPrint("halwa"),
+                                    splashColor: Colors.red,
                                     child: new Text(
                                       "Don't have an account? Sign Up",
                                       textAlign: TextAlign.center,
@@ -187,7 +210,7 @@ class _loginstate extends State<login> with TickerProviderStateMixin {
                                               style: new TextStyle(
                                                 color: Colors.white,
                                                 fontSize: 20.0,
-                                                fontWeight: FontWeight.w300,
+                                                fontWeight: FontWeight.bold,
                                                 letterSpacing: 0.3,
                                               ),
                                             ),
