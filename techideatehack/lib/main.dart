@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Pages/login.dart';
+import 'Pages/recentq.dart';
+
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -21,6 +24,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: login(),
+      routes: <String,WidgetBuilder>
+      {
+        'recent': (BuildContext context) => new recentq(),
+      }
     );
   }
 }
