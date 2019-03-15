@@ -104,6 +104,7 @@ class IntroPageItem extends StatelessWidget {
         0.5 + (pageVisibility.pagePosition / 3),
         0.5,
       ),
+     // color: Colors.deepOrange,
     );
 
     var imageOverlayGradient = DecoratedBox(

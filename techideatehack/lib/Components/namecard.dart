@@ -34,7 +34,7 @@ class _namecardstate extends State<namecard>
                       question = snapshot.data.documents[widget.index]['Question'];
                     }
                     return
-                      Text(question,style: TextStyle(fontSize: 30 ),);
+                      Center(child: Text(question,style: TextStyle(fontSize: 30 ),));
                   }
               ),
               subtitle: StreamBuilder(
@@ -45,7 +45,10 @@ class _namecardstate extends State<namecard>
                     else {
                       answer = snapshot.data.documents[widget.index]['Answer'];
                     }
-                    return Text(answer,style: TextStyle(fontSize: 25),);
+                    return Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Text(answer,style: TextStyle(fontSize: 25,height: 0.85),),
+                    );
                   }
               ),
             ),

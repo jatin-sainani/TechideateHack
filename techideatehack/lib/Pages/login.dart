@@ -71,6 +71,7 @@ class _loginstate extends State<login> with TickerProviderStateMixin {
                     color: Colors.white,
                   ),
                   child: new Container(
+
                       decoration: new BoxDecoration(
                          color: Colors.black),
                     child: new ListView(
