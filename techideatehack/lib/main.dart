@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'Pages/login.dart';
 import 'Pages/recentq.dart';
+import 'intro/intro_page_view.dart';
+import 'dashboard/dashboard_one.page.dart';
 
 
 void main() => runApp(MyApp());
@@ -23,10 +25,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: login(),
+      home: IntroPageView(),
       routes: <String,WidgetBuilder>
       {
         'recent': (BuildContext context) => new recentq(),
+        'login' : (BuildContext context) => new login(),
+        'dashboard' : (BuildContext context) => new DashboardOnePage(),
       }
     );
   }

@@ -75,7 +75,8 @@ class IntroPageItem extends StatelessWidget {
             disabledBorderColor: Colors.white,
 
             // ignore: argument_type_not_assignable
-            onPressed: ()=>("hello"),
+            onPressed: (){Navigator.of(context).pushReplacementNamed('login');},
+
             child: new Text('Continue',
 
               style: TextStyle(
