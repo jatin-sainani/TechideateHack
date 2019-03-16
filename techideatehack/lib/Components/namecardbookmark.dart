@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class namecard extends StatefulWidget{
+class namecardbookmark extends StatefulWidget{
   int index;
-  namecard(this.index);
-  _namecardstate createState() => new _namecardstate();
+  namecardbookmark(this.index);
+
+  _namecardbookmarkstate createState() => new _namecardbookmarkstate();
 }
 
-class _namecardstate extends State<namecard>
+class _namecardbookmarkstate extends State<namecardbookmark>
 {
   String question;
   String answer;
@@ -25,7 +26,7 @@ class _namecardstate extends State<namecard>
             ListTile(
               //leading: Icon(Icons.album),
               title: StreamBuilder(
-                  stream: Firestore.instance.collection('Q&A').snapshots(),
+                  stream: Firestore.instance.collection('Favourite').snapshots(),
                   builder: (context,snapshot){
                     if(!snapshot.hasData)
                     {
@@ -38,7 +39,7 @@ class _namecardstate extends State<namecard>
                   }
               ),
               subtitle: StreamBuilder(
-                  stream: Firestore.instance.collection('Q&A').snapshots(),
+                  stream: Firestore.instance.collection('Favourite').snapshots(),
                   builder: (context,snapshot){
                     if(!snapshot.hasData)
                     {answer=('Please wait...');}
@@ -50,21 +51,6 @@ class _namecardstate extends State<namecard>
                       child: Text(answer,style: TextStyle(fontSize: 25,height: 0.85),),
                     );
                   }
-              ),
-            ),
-            ButtonTheme.bar(
-// make buttons use the appropriate styles for cards
-              child: ButtonBar(
-                children: <Widget>[
-                  FlatButton(
-                      child: const Text('Favourite'),
-                      onPressed: () async{
-                        await Firestore.instance.collection('Favourite').document().setData(
-                            {'Question': question,'Answer':answer});
-                        return SnackBar(content: Text('Bookmark added'),duration: Duration(seconds: 2),);
-                      }
-                  ),
-                ],
               ),
             ),
           ],

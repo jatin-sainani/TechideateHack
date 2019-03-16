@@ -8,6 +8,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DashboardOnePage extends StatelessWidget {
   Size deviceSize;
+
+  BuildContext context;
   Widget appBarColumn(BuildContext context) => SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 18.0),
@@ -28,7 +30,7 @@ class DashboardOnePage extends StatelessWidget {
                         : null,
                   ),
                   new ProfileTile(
-                    title: "Hi, Rishabh Kumar",
+                    title: "Hello",
                     subtitle: "Welcome to Career Community! ",
                     textColor: Colors.white,
                   ),
@@ -87,47 +89,62 @@ class DashboardOnePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  DashboardMenuRow(
-                    firstIcon: FontAwesomeIcons.users,
-                    firstLabel: "QnA",
-                    firstIconCircleColor: Colors.blue,
-                    secondIcon: FontAwesomeIcons.plus,
-                    secondLabel: "Ask Questions",
-                    secondIconCircleColor: Colors.orange,
-                    thirdIcon: FontAwesomeIcons.user,
-                    thirdLabel: "Profile",
-                    thirdIconCircleColor: Colors.purple,
-                    fourthIcon: FontAwesomeIcons.solidHeart,
-                    fourthLabel: "Favourites",
-                    fourthIconCircleColor: Colors.indigo,
+                  InkWell(
+              splashColor: Colors.pinkAccent,
+                    onTap: (){Navigator.of(context).pushNamed('recent');},
+                    child: DashboardMenuRow(
+
+                      firstIcon: FontAwesomeIcons.users,
+                      firstLabel: "QnA",
+                      firstIconCircleColor: Colors.blue,
+                      secondIcon: FontAwesomeIcons.plus,
+                      secondLabel: "Ask Questions",
+                      secondIconCircleColor: Colors.orange,
+                      thirdIcon: FontAwesomeIcons.user,
+                      thirdLabel: "Profile",
+                      thirdIconCircleColor: Colors.purple,
+                      fourthIcon: FontAwesomeIcons.solidHeart,
+                      fourthLabel: "Favourites",
+                      fourthIconCircleColor: Colors.indigo,
+                    ),
                   ),
-                  DashboardMenuRow(
-                    firstIcon: FontAwesomeIcons.question,
-                    firstLabel: "Asked Qs",
-                    firstIconCircleColor: Colors.red,
-                    secondIcon: FontAwesomeIcons.book,
-                    secondLabel: "After 10th?",
-                    secondIconCircleColor: Colors.teal,
-                    thirdIcon: FontAwesomeIcons.graduationCap,
-                    thirdLabel: "After 12th?",
-                    thirdIconCircleColor: Colors.lime,
-                    fourthIcon: FontAwesomeIcons.solidCommentDots,
-                    fourthLabel: "Reviews",
-                    fourthIconCircleColor: Colors.amber,
+                  
+                  InkWell(
+                    splashColor: Colors.pinkAccent,
+                    onTap:(){Navigator.of(context).pushNamed('fav');
+                    print('role');},
+                    child: DashboardMenuRow(
+                      firstIcon: FontAwesomeIcons.question,
+                      firstLabel: "Asked Qs",
+                      firstIconCircleColor: Colors.red,
+                      secondIcon: FontAwesomeIcons.book,
+                      secondLabel: "After 10th?",
+                      secondIconCircleColor: Colors.teal,
+                      thirdIcon: FontAwesomeIcons.graduationCap,
+                      thirdLabel: "After 12th?",
+                      thirdIconCircleColor: Colors.lime,
+                      fourthIcon: FontAwesomeIcons.solidCommentDots,
+                      fourthLabel: "Reviews",
+                      fourthIconCircleColor: Colors.amber,
+                    ),
                   ),
-                  DashboardMenuRow(
-                    firstIcon: FontAwesomeIcons.file,
-                    firstLabel: "Test",
-                    firstIconCircleColor: Colors.cyan,
-                    secondIcon: FontAwesomeIcons.map,
-                    secondLabel: "Locate",
-                    secondIconCircleColor: Colors.redAccent,
-                    thirdIcon: FontAwesomeIcons.blogger,
-                    thirdLabel: "Articles",
-                    thirdIconCircleColor: Colors.pink,
-                    fourthIcon: FontAwesomeIcons.cog,
-                    fourthLabel: "Settings",
-                    fourthIconCircleColor: Colors.brown,
+                  InkWell(
+                      splashColor: Colors.pinkAccent,
+                    onTap:(){ Navigator.of(context).pushNamed('ask');},
+                    child: DashboardMenuRow(
+                      firstIcon: FontAwesomeIcons.file,
+                      firstLabel: "Test",
+                      firstIconCircleColor: Colors.cyan,
+                      secondIcon: FontAwesomeIcons.map,
+                      secondLabel: "Locate",
+                      secondIconCircleColor: Colors.redAccent,
+                      thirdIcon: FontAwesomeIcons.blogger,
+                      thirdLabel: "Articles",
+                      thirdIconCircleColor: Colors.pink,
+                      fourthIcon: FontAwesomeIcons.cog,
+                      fourthLabel: "Settings",
+                      fourthIconCircleColor: Colors.brown,
+                    ),
                   ),
                 ],
               ),

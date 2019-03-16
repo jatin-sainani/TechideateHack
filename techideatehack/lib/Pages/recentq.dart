@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Components/namecard.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class recentq extends StatefulWidget
 {
@@ -19,15 +20,34 @@ class _recentqstate extends State<recentq>
         ),
       ),
       centerTitle: true,),
-      body:new
-          ListView(
-            children: <Widget>[
-              new namecard(0),
-              new Container(height: 10.0,),
-              new namecard(1),
-
-            ],
-          ),
-      );
+      body: StreamBuilder(
+    stream: Firestore.instance.collection('Q&A').snapshots(),
+    builder: (BuildContext context, snapshot){
+    if(!snapshot.hasData){
+    return CircularProgressIndicator();
+    } else {
+    print(snapshot.data);
+    final children1 = <Widget>[];
+    int count = snapshot.data.documents.length;
+    for (var i = 0; i < count; i++) {
+    children1.add(namecard(i));
+    }
+    return CustomScrollView(
+    shrinkWrap: true,
+    slivers: <Widget>[
+    SliverPadding(
+    padding: const EdgeInsets.all(20.0),
+    sliver: SliverList(
+    delegate: SliverChildListDelegate(
+    children1
+    ),
+    ),
+    ),
+    ],
+    );
+    }
+    }
+    )
+    );
   }
 }

@@ -38,10 +38,13 @@ class DashboardMenuRow extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
         children: <Widget>[
+          new InkWell(child:
           LabelBelowIcon(
             icon: firstIcon,
             label: firstLabel,
             circleColor: firstIconCircleColor,
+          ),
+            onTap: (){Navigator.of(context).pushNamed('recent');},
           ),
           LabelBelowIcon(
             icon: secondIcon,
