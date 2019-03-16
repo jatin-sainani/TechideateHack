@@ -19,12 +19,7 @@ appBar: new AppBar(backgroundColor: Colors.deepPurple, title: new Text("Settings
       centerTitle: true,),
       body: new Center(
           child:
-      new IconButton(icon: Icon(Icons.exit_to_app,size: 100.0,color: Colors.blue[500],), onPressed: (){
-
-    Navigator.of(context).pushReplacementNamed('login');
-
-      }
-      ),
+      new RaisedButton(onPressed: (){Navigator.pushReplacementNamed(context, 'login');},child: Icon(Icons.exit_to_app,color: Colors.blue,),color: Colors.white,),
       )
 
     );
